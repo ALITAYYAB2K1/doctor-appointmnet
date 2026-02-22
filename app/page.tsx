@@ -1,9 +1,40 @@
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import PatientForm from "@/components/forms/PatientForm";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Home</h1>
+    <div className="flex h-screen max-h-screen">
+      <section className="remove-scrollbar container my-auto">
+        <div className="sub-container max-w-[496px]">
+          <Image
+            src="/assets/icons/logo-full.svg"
+            alt="logo"
+            width={1000}
+            height={1000}
+            className="mb-12 h-10 w-fit rounded-full"
+          />
+          <PatientForm />
+          <div className="text-14-regular mt-20 flex justify-between">
+            <p className="justify-items-end text-dark-600 xl:text-left">
+              © 2026 CarePulse
+            </p>
+            <p>
+              <Link href="/?admin=true" className="text-green-500">
+                Admin
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+      <Image
+        src="/assets/images/onboarding-img.png"
+        alt="doctor"
+        width={1000}
+        height={1000}
+        className="side-img max-w-[50%]"
+      />
     </div>
   );
 }
